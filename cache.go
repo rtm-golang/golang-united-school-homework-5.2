@@ -42,11 +42,11 @@ func (c *Cache) Keys() []string {
 			delete(c.DeadlineMap, k)
 		}
 	}
-	valueList := make([]string, len(c.ValueMap))
-	for _, v := range c.ValueMap {
-		valueList = append(valueList, v)
+	keyList := make([]string, len(c.ValueMap))
+	for k := range c.ValueMap {
+		keyList = append(keyList, k)
 	}
-	return valueList
+	return keyList
 }
 
 func (c *Cache) PutTill(key, value string, deadline time.Time) {
