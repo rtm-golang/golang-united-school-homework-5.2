@@ -8,7 +8,7 @@ type Cache struct {
 }
 
 func NewCache() Cache {
-	return Cache{}
+	return Cache{ValueMap: make(map[string]string), DeadlineMap: make(map[string]time.Time)}
 }
 
 func (c *Cache) Get(key string) (string, bool) {
