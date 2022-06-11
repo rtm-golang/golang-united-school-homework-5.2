@@ -42,7 +42,7 @@ func (c *Cache) Keys() []string {
 			delete(c.DeadlineMap, k)
 		}
 	}
-	keyList := make([]string, len(c.ValueMap))
+	var keyList []string
 	for k := range c.ValueMap {
 		keyList = append(keyList, k)
 	}
